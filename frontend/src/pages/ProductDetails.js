@@ -1,17 +1,29 @@
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom'
 
-import data from '../data'
+import Message from '../components/Message'
+import Spinner from '../components/Spinner'
 import Rating from '../components/Rating'
+import { detailsProduct } from '../actions/productActions'
 
 export default function ProductDetails() {
-  const { id } = useParams()
-  const { products } = data
-  console.log(products)
-  const product = products.find((x) => x._id === id)
+  const dispatch = useDispatch()
+  const { id: productId } = useParams()
+  const productDetails = useSelector((state) => state.productDetails)
+  const { loading, error, product } = productDetails
+
+  useEffect(() => {
+    dispatch(detailsProduct(productId))
+  }, [dispatch, productId])
+
   return (
     <>
-      {product ? (
+      {loading ? (
+        <Spinner />
+      ) : error ? (
+        <Message variant='danger'>{error}</Message>
+      ) : (
         <>
           <Link to='/'>Back to result</Link>
           <div className='row top'>
@@ -65,8 +77,6 @@ export default function ProductDetails() {
             </div>
           </div>
         </>
-      ) : (
-        <div>Product Not Found</div>
       )}
     </>
   )
