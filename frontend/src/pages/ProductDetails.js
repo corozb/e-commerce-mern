@@ -1,11 +1,12 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+import data from '../data'
 import Rating from '../components/Rating'
 
 export default function ProductDetails() {
   const { id } = useParams()
-  // const { products } = data
+  const { products } = data
   console.log(products)
   const product = products.find((x) => x._id === id)
   return (
