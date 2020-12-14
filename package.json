@@ -1,0 +1,27 @@
+{
+  "name": "e-commerce_mern",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Fully functional e-commerce website like Amazon.com using MERN stack with the following features:\r - Product list in home page\r - Product details on details screen\r - Product category in sidebar \r - Review of product and show ratings\r - Search products on products search screen\r - Shopping cart\r - Checkout\r - Shipping information\r - Payment method with paypal\r - Summary of order\r - User session\r - User profile\r - Order History",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corozb/e-commerce_mern.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corozb/e-commerce_mern/issues"
+  },
+  "homepage": "https://github.com/corozb/e-commerce_mern#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

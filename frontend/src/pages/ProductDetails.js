@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Rating from '../components/Rating'
-import data from '../data'
+import data from '../../../backend/data'
 
 export default function ProductDetails() {
   const { id } = useParams()
