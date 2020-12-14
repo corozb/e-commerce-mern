@@ -1,14 +1,13 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
+
 import Rating from '../components/Rating'
-import data from '../../../backend/data'
 
 export default function ProductDetails() {
   const { id } = useParams()
-  const { products } = data
+  // const { products } = data
   console.log(products)
   const product = products.find((x) => x._id === id)
-
   return (
     <>
       {product ? (
@@ -52,7 +51,7 @@ export default function ProductDetails() {
                         {product.countInStock > 0 ? (
                           <span className='success'>In Stock</span>
                         ) : (
-                          <span className='error'>Unavailable</span>
+                          <span className='danger'>Unavailable</span>
                         )}
                       </div>
                     </div>
