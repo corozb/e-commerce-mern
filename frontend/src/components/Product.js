@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import Rating from './Rating'
 
 export default function Product({ product }) {
-  console.log(product)
   return (
     <div className='card'>
       <Link to={`/product/${product._id}`}>
