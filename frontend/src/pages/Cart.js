@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 import Message from '../components/Message'
 
 export default function Cart({ history, location }) {
@@ -21,12 +21,12 @@ export default function Cart({ history, location }) {
   }, [dispatch, productId, qty])
 
   const removeFromCartHandler = (id) => {
-    // delete
+    console.log(id)
+    dispatch(removeFromCart(id))
   }
 
   const checkoutHandler = () => {
     history.push('/signin?redirect=shipping')
-    // history.push('/')
   }
 
   return (
