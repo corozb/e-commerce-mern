@@ -1,65 +1,42 @@
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+import Home from './pages/Home'
+import ProductDetails from './pages/ProductDetails'
+import Cart from './pages/Cart'
 import './App.css'
-import data from './data'
 
 function App() {
-  const { products } = data
-  console.log(products)
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
 
   return (
-    <>
+    <Router>
       <div className='grid-container'>
         <header className='row'>
           <div>
-            <a className='brand' href='index.html'>
+            <Link className='brand' to='/'>
               amazona
-            </a>
+            </Link>
           </div>
           <div className='signin'>
-            <a href='/cart'>Cart</a>
-            <a href='/signing'>Signin</a>
+            <Link to='/cart'>
+              Cart
+              {cartItems.length ? (
+                <span className='badge'>{cartItems.length}</span>
+              ) : null}
+            </Link>
+            <Link to='/signin'>Signin</Link>
           </div>
         </header>
         <main>
-          <div className='row center'>
-            {products.map((product) => (
-              <div key={product._id} className='card'>
-                <a href={`/product/${product._id}`}>
-                  <img
-                    className='medium'
-                    src={product.image}
-                    alt={product.name}
-                  />
-                </a>
-                <div className='card-body'>
-                  <a href={`/product/${product._id}`}>
-                    <h2>{product.name}</h2>
-                  </a>
-                  <div className='rating'>
-                    <span>
-                      <i className='fas fa-star'></i>
-                    </span>
-                    <span>
-                      <i className='fas fa-star'></i>
-                    </span>
-                    <span>
-                      <i className='fas fa-star'></i>
-                    </span>
-                    <span>
-                      <i className='fas fa-star'></i>
-                    </span>
-                    <span>
-                      <i className='fas fa-star'></i>
-                    </span>
-                  </div>
-                  <div className='price'> ${product.price}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Route exact path='/' component={Home} />
+          <Route path='/product/:id' component={ProductDetails} />
+          <Route path='/cart/:id?' component={Cart} />
         </main>
         <footer className='row center'>All right reserved</footer>
       </div>
-    </>
+    </Router>
   )
 }
 

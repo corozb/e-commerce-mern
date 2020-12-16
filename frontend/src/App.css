@@ -26,6 +26,15 @@ a.brand {
   font-weight: bold;
 }
 
+.badge {
+  background-color: #f02020;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  margin-left: 0.2rem;
+}
+
 .signin > * {
   font-size: 1.2rem;
 }
@@ -40,16 +49,31 @@ footer {
   background-color: #203040;
   color: #fff;
 }
-
-.row.center {
-  justify-content: center;
-}
-
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+.row.top {
+  align-items: flex-start;
+}
+
+.col-1 {
+  flex: 1 1 25rem;
+}
+
+.col-2 {
+  flex: 2 1 50rem;
+}
+
+.min-30 {
+  min-width: 30rem;
 }
 
 /* Common */
@@ -71,13 +95,67 @@ h2 {
   padding: 1rem 0;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+button {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border: 0.1rem #404040 solid;
+}
+
+button.primary {
+  background-color: #f0c040;
+}
+
+button.block {
+  width: 100%;
+}
+
 /* card */
 img {
   border-radius: 0.5rem;
 }
 
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+
 img.medium {
   max-width: 20rem;
+  width: 100%;
+}
+
+img.large {
   width: 100%;
 }
 
@@ -104,4 +182,34 @@ img.medium {
 .rating span {
   color: #f0c040;
   margin: 0.1rem;
+  font-size: 1.4rem;
+}
+
+.rating span:last-child {
+  color: #404040;
+}
+
+/* Alert */
+.success {
+  color: #20a020;
+}
+
+.danger {
+  color: #a02020;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
 }
