@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import ProductDetails from './pages/ProductDetails'
 import Cart from './pages/Cart'
 import Signin from './pages/Signin'
+import Register from './pages/Register'
 import { signout } from './actions/userActions'
 import './App.css'
 
@@ -59,6 +60,7 @@ function App() {
           <Route path='/product/:id' component={ProductDetails} />
           <Route path='/cart/:id?' component={Cart} />
           <Route path='/signin' component={Signin} />
+          <Route path='/register' component={Register} />
         </main>
         <footer className='row center'>All right reserved</footer>
       </div>
