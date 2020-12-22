@@ -19,7 +19,7 @@ export default function Payment({ history }) {
   const submitHandler = (e) => {
     e.preventDefault()
     dispatch(savePayment(paymentMethod))
-    history.push('/placeholder')
+    history.push('/placeorder')
   }
 
   return (
