@@ -9,6 +9,7 @@ import Register from './pages/Register'
 import { signout } from './actions/userActions'
 import './App.css'
 import Shipping from './pages/Shipping'
+import Payment from './pages/Payment'
 
 function App() {
   const cart = useSelector((state) => state.cart)
@@ -63,6 +64,7 @@ function App() {
           <Route path='/signin' component={Signin} />
           <Route path='/register' component={Register} />
           <Route path='/shipping' component={Shipping} />
+          <Route path='/payment' component={Payment} />
         </main>
         <footer className='row center'>All right reserved</footer>
       </div>

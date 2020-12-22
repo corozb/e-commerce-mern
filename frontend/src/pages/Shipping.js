@@ -43,7 +43,7 @@ export default function Shipping({ history }) {
             placeholder='Enter full name'
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            require
+            require='true'
           />
         </div>
         <div>
@@ -54,7 +54,7 @@ export default function Shipping({ history }) {
             placeholder='Enter Address'
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            require
+            require='true'
           />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function Shipping({ history }) {
             placeholder='Enter City'
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            require
+            require='true'
           />
         </div>
         <div>
@@ -76,7 +76,7 @@ export default function Shipping({ history }) {
             placeholder='Enter Postal Code'
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
-            require
+            require='true'
           />
         </div>
         <div>
@@ -87,7 +87,7 @@ export default function Shipping({ history }) {
             placeholder='Enter Country'
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            require
+            require='true'
           />
         </div>
         <div>
